@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./../css/needHelp.css">
+        <title>getHelp-need help</title>
+    </head>
+    <body>
+        <div class="">
+           <div class="container-fluid header">
+               <div class="row">
+                    <div class="col-2 col-md-4">
+                    </div>
+                    <div class="col-8 col-md-4 logo-cover">
+                        <img class="logo-img" src="./../images/logo.png">
+                    </div>
+                    <div class="col-2 col-md-4">
+                    </div>
+               </div>
+           </div>
+        </div>
+        <div class="main">
+            <div class="container-fluid introduction-cover">
+                <div class="row">
+                    <div class="col-12">
+                         <h5 class="introduction">Please enter correct information about you and your requirement's on this page, so help can reach you properly in this difficult time. You won't be able to make any changes once your help request has been submitted!</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid helpForm">
+                <div class="row sub-form">
+                    <div class="col-12 head-col">
+                        <h6 class="form-head">CONTACT INFORMATION</h6>
+                    </div>
+                    <div class="col-6 col-md-2">
+                         <label class="form-label" for="hname">NAME</label>
+                    </div>
+                    <div class="col-6 col-md-4">
+                         <input class="text-input" type="text" id="hname" name="hname" placeholder="Your name">
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <label class="form-label" for="hcontact">CONTACT</label>
+                   </div>
+                    <div class="col-6 col-md-4">
+                        <input class="text-input" type="number" id="hcontact" name="hcontact" placeholder="Your contact no">
+                    </div>
+                </div>
+                <div class="row sub-form">
+                    <div class="col-12 head-col">
+                        <h6 class="form-head">YOUR LOCATION</h6>
+                    </div>
+                    <div class="col-6 col-md-2">
+                         <label class="form-label" for="hstate">STATE</label>
+                    </div>
+                    <div class="col-6 col-md-4">
+                         <input class="text-input" list="states" placeholder="Your state" id="hstate">
+                         <datalist id="states">
+                             <option value="Andra pradesh"/>
+                             <option value="Arunachal pradesh"/>
+                             <option value="Assam"/>
+                             <option value="Bihar"/>
+                             <option value="Chattisgarh"/>
+                             <option value="Goa"/>
+                             <option value="Gujarat"/>
+                             <option value="Harayana"/>
+                             <option value="Himachal Pradesh"/>
+                             <option value="Jharkhand"/>
+                             <option value="Karnataka"/>
+                             <option value="Kerala"/>
+                             <option value="Madhya Pradesh"/>
+                             <option value="Maharashtra"/>
+                             <option value="Manipur"/>
+                             <option value="Meghalaya"/>
+                             <option value="Mizoram"/>
+                             <option value="Nagaland"/>
+                             <option value="Odisha"/>
+                             <option value="Punjab"/>
+                             <option value="Rajasthan"/>
+                             <option value="Sikkim"/>
+                             <option value="Tamil nadu"/>
+                             <option value="Telangana"/>
+                             <option value="Tripura"/>
+                             <option value="Uttarakhand"/>
+                             <option value="Uttar Pradesh"/>
+                             <option value="West Bengal"/>
+                             <option value="Andaman and Nicobar Islands"/>
+                             <option value="Chandigarh"/>
+                             <option value="Dadra and Nagar Haveli and Daman and Diu"/>
+                             <option value="The Government of NCT of Delhi"/>
+                             <option value="Jammu and Kashmir"/>
+                             <option value="Ladakh"/>
+                             <option value="Lakshadeep"/>
+                             <option value="Puducherry"/>
+                         </datalist>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <label class="form-label" for="hdistrict">DISTRICT</label>
+                   </div>
+                    <div class="col-6 col-md-4">
+                        <input class="text-input" list="districts" placeholder="Your district" id="hdistrict">
+                        <datalist id="districts">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="row sub-form">
+                    <div class="col-12 head-col">
+                        <h6 class="form-head">DESCRIBE, WHAT HELP DO YOU REQUIRE?</h6>
+                    </div>
+                    <div class="col-12">
+                        <textarea id="helpdesc" name="helpdesc" rows="10" cols="50" placeholder="Describe what help you require!"></textarea>
+                    </div>
+                </div>
+                <div class="row submit-btn-cover ">
+                    <div class="col-12 ">
+                        <button class="submit-btn" id="need-submit">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid covid-warning-cover">
+                <div class="row">
+                    <div class="col-12">
+                         <h5 class="covid-warning">As India is facing second wave of covid-19, it is recommended that people should wear mask and strictly follow social distancing norms! We hope you and your loved once never ever need to use this portal for help!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1 col-md-2">
+                    </div>
+                    <div class="col-10 col-md-8 copyright">
+                        &copy;2021 Dharmik bhadra 
+                    </div>
+                    <div class="col-1 col-md-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./../js/bundle.js"></script>
+    </body>
+</html>

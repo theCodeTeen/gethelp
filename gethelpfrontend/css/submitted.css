@@ -1,0 +1,159 @@
+.header{
+    margin: 10px 0;
+    height: 140px;
+}
+.row{
+    height: 100%;
+}
+.logo-cover{
+    text-align: center;
+    margin-top: 20px;
+}
+.logo-img{
+    height: 85%;
+    width: 45%;
+}
+
+.introduction-cover,.covid-warning-cover{
+    height: 44px;
+    text-align: center;
+    background-color:#1167b1;
+    color: white;
+}
+.introduction,.covid-warning{
+  width: 70%;
+  margin: 0 auto;
+  padding:10px auto;
+  font-size: 15px;
+  line-height: 20px;
+}
+.footer{
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+}
+.copyright{
+    margin-top: 7px;
+}
+
+
+.main{
+    background-color: #03254c;
+   
+}
+.success-message{
+    height: 350px;
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+.success-message img{
+    height: 200px;
+    margin: 25px auto 15px auto;
+}
+.message{
+    width: 70%;
+    margin: 0 auto;
+}
+@media (max-width: 1200px){
+    .introduction,.covid-warning{
+        font-size :13px;
+    }
+}
+@media (max-width: 1050px){
+    .introduction,.covid-warning{
+        width: 80%;
+    }
+    .logo-cover{
+        margin-top: 20px;
+    }
+    .logo-img{
+        height: 85%;
+        width: 50%;
+    }
+    .message{
+        width: 80%;
+    }
+}
+@media (max-width: 900px){
+    .introduction,.covid-warning{
+        width: 95%;
+    }
+    .header{
+        height: 130px;
+    }
+    .logo-img{
+        width: 55%;
+    }
+    .message{
+        width: 90%;
+    }
+}
+@media (max-width: 766px){
+    .introduction-cover,.covid-warning-cover{
+        height: 59px;
+    }
+    .introduction,.covid-warning{
+        width: 100%;
+    }
+    .logo-img{
+        height: 80%;
+        width: 40%;
+    }
+    .message{
+        font-size:17px;
+    }
+    .success-message{
+        height: 320px;
+    }
+    .success-message img{
+        height:180px;
+    }
+}
+@media (max-width: 620px){
+    .logo-cover{
+        margin-top: 15px;
+    }
+    .introduction-cover,.covid-warning-cover{
+        height: 59px;
+    }
+    .message{
+        width: 98%;
+        font-size:15px;
+    }
+    .success-message{
+        height: 300px;
+    }
+    .success-message img{
+        margin-bottom: 10px;
+        height: 160px;
+    }
+}
+@media (max-width: 530px){
+    .logo-cover{
+        margin-top: 10px;
+    }
+    .introduction-cover,.covid-warning-cover{
+        height: 80px;
+    }
+    .logo-img{
+        width: 55%;
+    }
+}
+@media (max-width: 380px){
+    .introduction,.covid-warning{
+        font-size :12px;
+    }
+    .introduction-cover,.covid-warning-cover{
+        height: 100px;
+    }
+    .logo-img{
+        width: 65%;
+    }
+    .success-message img{
+        margin-bottom: 7px;
+        height: 150px;
+    }
+}

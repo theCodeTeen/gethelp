@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./../css/needHelp.css">
+        <link rel="stylesheet" href="./../css/helpResults.css">
+        <title>getHelp</title>
+    </head>
+    <body onload="loadResults()">
+        <div class="">
+           <div class="container-fluid header">
+               <div class="row">
+                    <div class="col-2 col-md-4">
+                    </div>
+                    <div class="col-8 col-md-4 logo-cover">
+                        <img class="logo-img" src="./../images/logo.png">
+                    </div>
+                    <div class="col-2 col-md-4">
+                    </div>
+               </div>
+           </div>
+        </div>
+        <div class="main">
+            <div class="container-fluid searchOptions">
+                <div class="row searchOption ">
+                    <div class="col-4 col-md-2">
+                        <label class="form-label" for="hestate">STATE</label>
+                    </div>
+                    <div class="col-8 col-md-3">
+                        <input class="text-input" list="states" placeholder="Your state" id="hstate" >
+                     <datalist id="states">
+                         <option value="Andra pradesh"/>
+                         <option value="Arunachal pradesh"/>
+                         <option value="Assam"/>
+                         <option value="Bihar"/>
+                         <option value="Chattisgarh"/>
+                         <option value="Goa"/>
+                         <option value="Gujarat"/>
+                         <option value="Harayana"/>
+                         <option value="Himachal Pradesh"/>
+                         <option value="Jharkhand"/>
+                         <option value="Karnataka"/>
+                         <option value="Kerala"/>
+                         <option value="Madhya Pradesh"/>
+                         <option value="Maharashtra"/>
+                         <option value="Manipur"/>
+                         <option value="Meghalaya"/>
+                         <option value="Mizoram"/>
+                         <option value="Nagaland"/>
+                         <option value="Odisha"/>
+                         <option value="Punjab"/>
+                         <option value="Rajasthan"/>
+                         <option value="Sikkim"/>
+                         <option value="Tamil nadu"/>
+                         <option value="Telangana"/>
+                         <option value="Tripura"/>
+                         <option value="Uttarakhand"/>
+                         <option value="Uttar Pradesh"/>
+                         <option value="West Bengal"/>
+                         <option value="Andaman and Nicobar Islands"/>
+                         <option value="Chandigarh"/>
+                         <option value="Dadra and Nagar Haveku and Daman and Diu"/>
+                         <option value="The Government of NCT of Delhi"/>
+                         <option value="Jammu and Kashmir"/>
+                         <option value="Ladakh"/>
+                         <option value="Lakshadeep"/>
+                         <option value="Puducherry"/>
+                     </datalist>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <label class="form-label" for="hedistrict">DISTRICT</label>
+                    </div>
+                    <div class="col-8 col-md-3">
+                        <input class="text-input" list="districts" placeholder="Your district" id="hdistrict" >
+                        <datalist id="districts">
+                        </datalist>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <input class="submit-btnn" type="submit" value="SUBMIT" id="do-submit">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="container-fluid results-cover">
+                
+                <!-- <div class="row result-cover">
+                    <div class="col-12 result-head">
+                        <h5 class="result-name">Dharmik bhadra (+91 8779627492)</h5>
+                    </div>
+                    <div class="col-12 result-body">
+                        <p class="result-description">Hello, i need your urgent help for remedasivir and oxygen! Even a bed will be needed with 1 chai and 2 samosa!</p>
+                    </div>
+                </div> -->
+                   <div class="row result-cover" style="margin-top: 150px;">
+                       <div class="col-12 result-body">
+                           <h5 class="result-description">NO RESULTS FOUND</h5>
+                        </div>
+                   </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1 col-md-2">
+                    </div>
+                    <div class="col-10 col-md-8 copyright">
+                        &copy;2021 Dharmik bhadra 
+                    </div>
+                    <div class="col-1 col-md-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./../js/bundle.js"></script>
+        <script>
+        //LOAD RESULTS TO RESULTS PAGE
+        const loadResults=()=>{
+
+            let state=localStorage.getItem('state').replace(/\+/g," ");
+            state=state.charAt(0).toUpperCase()+state.slice(1);
+
+            let district=localStorage.getItem('district').replace(/\+/g," ");
+            district=district.charAt(0).toUpperCase()+district.slice(1);
+
+            document.getElementById('hstate').value = state;
+            document.getElementById('hdistrict').value = district;
+
+            const resultCover=document.querySelector('.results-cover');
+
+            const data=JSON.parse(localStorage.getItem('data'));
+            if(data.length>0)
+            {
+               let markup =`
+               <div class="row result-cover">
+                    <div class="col-12 result-head">
+                        <h5 class="result-name">%%name%% (+91 %%contact%%)</h5>
+                    </div>
+                    <div class="col-12 result-body">
+                        <p class="result-description">%%description%%</p>
+                    </div>
+                </div>
+               `;
+               resultCover.innerHTML="";
+               data.forEach(el=>{
+                    el.name = el.name.charAt(0).toUpperCase()+el.name.slice(1);
+                    let updateMarkup= markup.
+                    replace('%%name%%',el.name)
+                    .replace('%%contact%%',el.contact)
+                    .replace('%%description%%',el.description);
+                    resultCover.insertAdjacentHTML('beforeend',updateMarkup);
+               });
+            }
+        }
+        </script>
+    </body>
+</html>
