@@ -12,15 +12,15 @@ const errorController= require('./controllers/errorController');
 const app=express();
 //GLOBAL MIDDLEWARES
 app.use(cors());
-//app.use(helmet());
-//app.use(mongoSanitize());
+app.use(helmet());
+app.use(mongoSanitize());
 //app.use(xss());
 const limiter=rateLimit({
    max:100,
    windowMs: 1000*60*60,
    message:'Too many request! Try again after an hour'
 });
-//app.use('/api',limiter);
+app.use('/api',limiter);
 app.use(express.json());
 
 app.use('/api/v1/help',helpRouter);
